@@ -24,7 +24,6 @@ Real-time map synchronization between a **Tracker** and up to two **Followers** 
 real-time geo-sync/
 ├── .gitignore
 ├── README.md
-├── PROJECT_EXPLANATION.md    # Full A-to-Z technical walkthrough
 ├── client/                   # Next.js frontend
 │   ├── src/
 │   │   ├── app/
@@ -154,7 +153,3 @@ Up to 3 users can share a room (1 Tracker + 2 Followers).
 | `follower-joined` | Server to Client | `{ msg }` |
 
 ---
-
-## Full Technical Documentation
-
-See [PROJECT_EXPLANATION.md](./PROJECT_EXPLANATION.md) for a complete file-by-file breakdown, socket flow diagrams, and the live update mechanism explained in detail.
