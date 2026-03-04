@@ -94,4 +94,11 @@ function purgeIdleRooms() {
     }
 }
 
-module.exports = { createRoom, getRoom, addParticipant, removeParticipant, validateRoom, touchRoom, purgeIdleRooms };
+/**
+ * Get the current number of active rooms.
+ */
+function getActiveRoomCount() {
+    return rooms.size;
+}
+
+module.exports = { createRoom, getRoom, addParticipant, removeParticipant, validateRoom, touchRoom, purgeIdleRooms, getActiveRoomCount };

@@ -8,7 +8,12 @@ const firaCode = Fira_Code({ subsets: ['latin'], variable: '--font-fira-code' })
 export const metadata = {
     title: 'Real-Time Geo-Sync',
     description: 'Synchronize map views in real-time between a Tracker and Follower.',
-    viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+};
+
+export const viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
 };
 
 export default function RootLayout({ children }) {

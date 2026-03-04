@@ -8,7 +8,7 @@ const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
 const roomsRouter = require('./routes/rooms');
 const { registerSocketHandlers } = require('./sockets/handler');
-const { purgeIdleRooms } = require('./rooms/roomManager');
+const { purgeIdleRooms, getActiveRoomCount } = require('./rooms/roomManager');
 
 const PORT = process.env.PORT || 3001;
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:3000';
@@ -43,7 +43,12 @@ app.use(
 app.use('/api/v1/rooms', roomsRouter);
 
 app.get('/health', (_req, res) => {
-    res.json({ status: 'ok', uptime: process.uptime(), timestamp: new Date().toISOString() });
+    res.json({
+        status: 'ok',
+        uptime: process.uptime(),
+        timestamp: new Date().toISOString(),
+        activeRooms: getActiveRoomCount()
+    });
 });
 
 // ── Socket Handlers ───────────────────────────────────────────────────────────
